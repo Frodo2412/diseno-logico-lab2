@@ -1194,7 +1194,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 816 824 864 856)
+	(rect 744 824 792 856)
 	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
 	(text "inst29" (rect 3 21 32 33)(font "Arial" ))
 	(port
@@ -1521,7 +1521,11 @@ applicable agreement for further details.
 )
 (connector
 	(pt 720 840)
-	(pt 816 840)
+	(pt 744 840)
+)
+(connector
+	(pt 792 840)
+	(pt 864 840)
 )
 (connector
 	(pt 640 872)
