@@ -1,0 +1,193 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "10/11/2026 16:37:23"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    div_2048
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module div_2048_vlg_sample_tst(
+	CK_IN,
+	sampler_tx
+);
+input  CK_IN;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(CK_IN)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module div_2048_vlg_check_tst (
+	CK_2048,
+	sampler_rx
+);
+input  CK_2048;
+input sampler_rx;
+
+reg  CK_2048_expected;
+
+reg  CK_2048_prev;
+
+reg  CK_2048_expected_prev;
+
+reg  last_CK_2048_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:1] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 1'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	CK_2048_prev = CK_2048;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	CK_2048_expected_prev = CK_2048_expected;
+end
+
+
+
+// expected CK_2048
+initial
+begin
+	CK_2048_expected = 1'bX;
+	CK_2048_expected = #999000 1'b0;
+end 
+// generate trigger
+always @(CK_2048_expected or CK_2048)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected CK_2048 = %b | ",CK_2048_expected_prev);
+	$display("| real CK_2048 = %b | ",CK_2048_prev);
+`endif
+	if (
+		( CK_2048_expected_prev !== 1'bx ) && ( CK_2048_prev !== CK_2048_expected_prev )
+		&& ((CK_2048_expected_prev !== last_CK_2048_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port CK_2048 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", CK_2048_expected_prev);
+		$display ("     Real value = %b", CK_2048_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_CK_2048_exp = CK_2048_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#100000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module div_2048_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg CK_IN;
+// wires                                               
+wire CK_2048;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+div_2048 i1 (
+// port map - connection between master ports and signals/registers   
+	.CK_2048(CK_2048),
+	.CK_IN(CK_IN)
+);
+
+// CK_IN
+initial
+begin
+	CK_IN = 1'b1;
+	# 50000;
+	repeat(999)
+	begin
+		CK_IN = 1'b0;
+		CK_IN = #50000 1'b1;
+		# 50000;
+	end
+	CK_IN = 1'b0;
+end 
+
+div_2048_vlg_sample_tst tb_sample (
+	.CK_IN(CK_IN),
+	.sampler_tx(sampler)
+);
+
+div_2048_vlg_check_tst tb_out(
+	.CK_2048(CK_2048),
+	.sampler_rx(sampler)
+);
+endmodule
+

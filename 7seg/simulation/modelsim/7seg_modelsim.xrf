@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, C:/facultad/sistemas_digitales/dislog/lab2/7seg/7seg.bdf
+source_file = 1, C:/facultad/sistemas_digitales/dislog/lab2/7seg/db/7seg.cbx.xml
+source_file = 1, c:/altera/13.1/quartus/libraries/others/maxplus2/7449.bdf
+design_name = \7seg\
+instance = comp, \DISP[6]~output\, DISP[6]~output, \7seg\, 1
+instance = comp, \DISP[5]~output\, DISP[5]~output, \7seg\, 1
+instance = comp, \DISP[4]~output\, DISP[4]~output, \7seg\, 1
+instance = comp, \DISP[3]~output\, DISP[3]~output, \7seg\, 1
+instance = comp, \DISP[2]~output\, DISP[2]~output, \7seg\, 1
+instance = comp, \DISP[1]~output\, DISP[1]~output, \7seg\, 1
+instance = comp, \DISP[0]~output\, DISP[0]~output, \7seg\, 1
+instance = comp, \BCD[2]~input\, BCD[2]~input, \7seg\, 1
+instance = comp, \BCD[1]~input\, BCD[1]~input, \7seg\, 1
+instance = comp, \BCD[0]~input\, BCD[0]~input, \7seg\, 1

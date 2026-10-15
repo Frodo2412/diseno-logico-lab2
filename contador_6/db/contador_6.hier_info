@@ -1,0 +1,78 @@
+|circuito_prueba
+HEX_D[0] <= 7seg:inst.DISP[0]
+HEX_D[1] <= 7seg:inst.DISP[1]
+HEX_D[2] <= 7seg:inst.DISP[2]
+HEX_D[3] <= 7seg:inst.DISP[3]
+HEX_D[4] <= 7seg:inst.DISP[4]
+HEX_D[5] <= 7seg:inst.DISP[5]
+HEX_D[6] <= 7seg:inst.DISP[6]
+SW9 => contador_6:inst7.inc
+SW8 => contador_6:inst7.dec
+BTN[0] => nandltch:inst3.RN
+BTN[1] => nandltch:inst3.SN
+SW0 => contador_6:inst7.reset_n
+LED_G[0] <= nandltch:inst3.QN
+
+
+|circuito_prueba|7seg:inst
+DISP[0] <= <GND>
+DISP[1] <= <GND>
+DISP[2] <= <GND>
+DISP[3] <= <GND>
+DISP[4] <= <GND>
+DISP[5] <= <GND>
+DISP[6] <= <GND>
+BCD[0] => 7449:inst.A
+BCD[1] => 7449:inst.B
+BCD[2] => 7449:inst.C
+
+
+|circuito_prueba|7seg:inst|7449:inst
+OG <= 33.DB_MAX_OUTPUT_PORT_TYPE
+C => 9.IN0
+BIN => 13.IN1
+BIN => 12.IN1
+BIN => 11.IN1
+BIN => 14.IN1
+B => 8.IN0
+A => 7.IN0
+D => 10.IN0
+OF <= 37.DB_MAX_OUTPUT_PORT_TYPE
+OE <= 32.DB_MAX_OUTPUT_PORT_TYPE
+OD <= 36.DB_MAX_OUTPUT_PORT_TYPE
+OC <= 31.DB_MAX_OUTPUT_PORT_TYPE
+OB <= 35.DB_MAX_OUTPUT_PORT_TYPE
+OA <= 34.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|circuito_prueba|contador_6:inst7
+CONT[0] <= y0.DB_MAX_OUTPUT_PORT_TYPE
+CONT[1] <= y1.DB_MAX_OUTPUT_PORT_TYPE
+CONT[2] <= y2.DB_MAX_OUTPUT_PORT_TYPE
+reset_n => y2.ACLR
+reset_n => y1.ACLR
+reset_n => y0.ACLR
+CLK => y2.CLK
+CLK => y1.CLK
+CLK => y0.CLK
+inc => inst18.IN0
+inc => inst27.IN0
+inc => inst11.IN0
+inc => inst13.IN0
+inc => inst2.IN0
+inc => inst6.IN0
+dec => inst24.IN0
+dec => inst19.IN0
+dec => inst8.IN2
+dec => inst14.IN0
+dec => inst1.IN0
+dec => inst5.IN0
+
+
+|circuito_prueba|nandltch:inst3
+Q <= 6.DB_MAX_OUTPUT_PORT_TYPE
+SN => 7.IN0
+RN => 4.IN1
+QN <= 3.DB_MAX_OUTPUT_PORT_TYPE
+
+

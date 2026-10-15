@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\facultad\sistemas_digitales\dislog\lab2\contador_6\simulation\qsim
+vcircuito_prueba
+Z1 !s100 DHHXgzo_L6W<X1h<m2En30
+Z2 ITK_LjKJGdPI1zk<>=Z=N32
+Z3 Ve^I34aG01RC;XoNIdBk312
+Z4 dC:\facultad\sistemas_digitales\dislog\lab2\contador_6\simulation\qsim
+Z5 w1792032488
+Z6 8contador_6.vo
+Z7 Fcontador_6.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|contador_6.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1792032489.200000
+Z12 !s107 contador_6.vo|
+!s101 -O0
+vcircuito_prueba_vlg_check_tst
+!i10b 1
+!s100 HzW3?7:?>_=9kJHN;KLQn0
+I[_<@6Ka37[H`FilfXZILg3
+Z13 VGFR?MG8DXzf>j]M[[5YBa0
+R4
+R5
+Z14 8Waveform.vwf.vt
+Z15 FWaveform.vwf.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z16 !s108 1792032489.229000
+Z17 !s107 Waveform.vwf.vt|
+Z18 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R10
+vcircuito_prueba_vlg_sample_tst
+!i10b 1
+Z19 !s100 haTmmFUZag7VE8YnPo4>O1
+Z20 IX0U3E^LbDzmNMWR=3]A<Z3
+Z21 VA^<g1QN]8NBkDe]^1oiAJ1
+R4
+R5
+R14
+R15
+L0 29
+R8
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R10
+vcircuito_prueba_vlg_vec_tst
+!i10b 1
+!s100 :2^OI[V70gBPVV[UzRI>73
+IAiBngPG=P]Ra?Ui5P1kz41
+Z22 VDW_X<6CS^kzdAXeBd@nJL2
+R4
+R5
+R14
+R15
+L0 292
+R8
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R10
