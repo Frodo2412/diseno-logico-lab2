@@ -487,10 +487,12 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
+	(text "DISP[0]" (rect 836 570 879 582)(font "Arial" ))
 	(pt 824 584)
 	(pt 888 584)
 )
 (connector
+	(text "DISP[1]" (rect 836 602 879 614)(font "Arial" ))
 	(pt 824 616)
 	(pt 888 616)
 )
@@ -500,6 +502,7 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
+	(text "DISP[2]" (rect 836 634 879 646)(font "Arial" ))
 	(pt 824 648)
 	(pt 888 648)
 )
@@ -509,6 +512,7 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
+	(text "DISP[3]" (rect 836 666 879 678)(font "Arial" ))
 	(pt 824 680)
 	(pt 888 680)
 )
@@ -518,6 +522,7 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
+	(text "DISP[4]" (rect 836 698 879 710)(font "Arial" ))
 	(pt 824 712)
 	(pt 888 712)
 )
@@ -527,6 +532,7 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
+	(text "DISP[5]" (rect 836 730 879 742)(font "Arial" ))
 	(pt 824 744)
 	(pt 888 744)
 )
@@ -541,6 +547,7 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
+	(text "DISP[6]" (rect 836 762 879 774)(font "Arial" ))
 	(pt 824 776)
 	(pt 888 776)
 )
